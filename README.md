@@ -39,3 +39,8 @@ Bazel Generated class
 
 Buck Generated class
 ![Buck Generated Class](buck_generated_annotation.png?raw=true "Buck Generated Class")
+
+Opening Lombok in the Intellij debugger and setting a breakpoint where the annotation should be added, we can see Lombok adding the annotation during execution. For some reason, this annotation is not present in the final jar.
+
+Debugger
+![Debugger](intellij-debugger.png?raw=true "Debugger")
