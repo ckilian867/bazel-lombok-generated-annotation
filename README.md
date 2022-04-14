@@ -34,8 +34,8 @@ Examine bytecode using luyten decompiler
 java -jar luyten-0.5.4.jar
 ```
 
-Bazel iJar class
-![Bazel Generated Class](bazel_generated_annotation.png?raw=true "Bazel Class")
+Bazel Generated class
+![Bazel Generated Class](bazel_generated_annotation.png?raw=true "Bazel Generated Class")
 
-Buck iJar class
-![Buck Generated Class](buck_generated_annotation.png?raw=true "Buck iJar Class")
+Buck Generated class
+![Buck Generated Class](buck_generated_annotation.png?raw=true "Buck Generated Class")
