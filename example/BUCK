@@ -1,6 +1,6 @@
 prebuilt_jar(
     name = "lombok",
-    binary_jar = "lombok.jar",
+    binary_jar = "lombok-1.18.8.jar",
 )
 
 java_annotation_processor(

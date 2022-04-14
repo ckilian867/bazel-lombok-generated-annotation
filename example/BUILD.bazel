@@ -3,7 +3,7 @@ load("@rules_java//java:defs.bzl", "java_import", "java_library", "java_plugin")
 java_import(
     name = "lombok",
     jars = [
-        "lombok.jar",
+        "lombok-1.18.8.jar",
     ]
 )
 java_plugin(
@@ -21,7 +21,6 @@ java_plugin(
     visibility = ["//visibility:public"],
     deps = [":lombok"],
 )
-
 
 java_library(
     name = "lombok_plugin_lib",
