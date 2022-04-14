@@ -1,0 +1,40 @@
+load("@rules_java//java:defs.bzl", "java_import", "java_library", "java_plugin")
+
+java_import(
+    name = "lombok",
+    jars = [
+        "lombok.jar",
+    ]
+)
+java_plugin(
+    name = "annotation_processor",
+    generates_api = 1,
+    processor_class = "lombok.launch.AnnotationProcessorHider$AnnotationProcessor",
+    visibility = ["//visibility:public"],
+    deps = [":lombok"],
+)
+
+java_plugin(
+    name = "claiming_processor",
+    generates_api = 1,
+    processor_class = "lombok.launch.AnnotationProcessorHider$ClaimingProcessor",
+    visibility = ["//visibility:public"],
+    deps = [":lombok"],
+)
+
+
+java_library(
+    name = "lombok_plugin_lib",
+    exported_plugins = [":annotation_processor", ":claiming_processor"],
+    neverlink = True,
+    visibility = ["//visibility:public"],
+)
+
+java_library(
+    name = "problem",
+    srcs = ["Problem.java"],
+    deps = [
+        ":lombok_plugin_lib",
+        ":lombok",
+    ],
+)

@@ -1,0 +1,10 @@
+.DS_STORE
+.buckd
+buck.exe
+buck-out
+bazel-bazel-lombok-generated-annotation
+bazel-bin
+bazel-out
+bazel-testlogs
+*.class
+bazel-ijar-bug

@@ -1,0 +1,24 @@
+prebuilt_jar(
+    name = "lombok",
+    binary_jar = "lombok.jar",
+)
+
+java_annotation_processor(
+    name = "lombok_plugin",
+    isolate_class_loader = False,
+    processor_classes = [
+        "lombok.launch.AnnotationProcessorHider$AnnotationProcessor",
+        "lombok.launch.AnnotationProcessorHider$ClaimingProcessor",
+    ],
+    visibility = ["PUBLIC"],
+    deps = [
+        ":lombok",
+    ],
+)
+
+java_library(
+    name = "problem",
+    srcs = ["Problem.java"] + glob(["lombok.config"]),
+    deps = [":lombok"],
+    plugins = [":lombok_plugin"],
+)

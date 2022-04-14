@@ -1,0 +1,8 @@
+[java]
+  jar_spool_mode = direct_to_jar
+  suggest_dependencies = false
+  skip_checking_missing_deps = true
+  compile_against_abis = true
+  duplicates_log_level = fine
+  source_level = 8
+  target_level = 8
